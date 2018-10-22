@@ -1,0 +1,63 @@
+  <!-- 
+    WHO GOES THERE?
+                   \||/
+                |  @___oo
+      /\  /\   / (__,,,,|
+     ) /^\) ^\/ _)
+     )   /^\/   _)
+     )   _ /  / _)
+ /\  )/\/ ||  | )_)
+<  >      |(,,) )__)
+ ||      /    \)___)\
+ | \____(      )___) )___
+  \______(_______;;; __;;;
+
+  This code is based off of the web component app-layout Pesto template.
+   -->
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
+  <meta name="theme-color" content="#aa55ff">
+
+  <title>Amy Eddins</title>
+
+  <link rel="manifest" href="manifest.json">
+
+  <script src="https://unpkg.com/@webcomponents/webcomponentsjs@^2.0.0/webcomponents-loader.js"></script>
+  <!-- Import Web Animations polyfill -->
+  <script src="https://unpkg.com/web-animations-js@^2.0.0/web-animations-next-lite.min.js"></script>
+
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Raleway:400,700">
+
+  <script type="module">
+    import '@polymer/iron-ajax/iron-ajax.js';
+    import './src/main-app.js';
+  </script>
+
+  <style>
+
+    body {
+      margin: 0;
+      font-family: Raleway, sans-serif;
+      background-color: #f5f5f5;
+    }
+
+  </style>
+
+</head>
+<body unresolved>
+
+  <dom-bind>
+    <template is="dom-bind">
+
+      <iron-ajax url="data/jobs.json" auto last-response="{{jobs}}"></iron-ajax>
+      <iron-ajax url="data/about.json" auto last-response="{{about}}"></iron-ajax>
+      <main-app jobs="[[jobs]]" about="[[about]]"></main-app>
+
+    </template>
+  </dom-bind>
+
+</body>
+</html>
