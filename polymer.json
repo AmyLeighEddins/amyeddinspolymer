@@ -1,12 +1,16 @@
 {
   "sources": [
-    "data/*",
-    "data/images/*"
+    "data/**",
+    "data/images/**"
   ],
   "builds": [
     {
       "name": "bundled",
       "bundle": true
     }
+  ],
+  "extraDependencies": [
+    "manifest.json",
+    "node_modules/@webcomponents/webcomponentsjs/**"
   ]
 }
